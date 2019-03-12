@@ -1,0 +1,79 @@
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="Blocks">
+      <UniqueIdentifier>{34CB1791-27C0-478A-ABBB-AC781716A607}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Blocks\Cinder-CEF">
+      <UniqueIdentifier>{3476CBC9-AF45-4F28-95A6-556A32A2E09A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Blocks\Cinder-CEF\src">
+      <UniqueIdentifier>{33217719-EB92-45F8-8FDE-D1178E3A93EF}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\FabViewApp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\FabViewApp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClInclude Include="..\include\Resources.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Cinder\blocks\Cinder-CEF\src\ciCEF.h">
+      <Filter>Blocks\Cinder-CEF\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Cinder\blocks\Cinder-CEF\src\ciCEFBrowserClient.h">
+      <Filter>Blocks\Cinder-CEF\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Cinder\blocks\Cinder-CEF\src\ciCEFClientApp.h">
+      <Filter>Blocks\Cinder-CEF\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Cinder\blocks\Cinder-CEF\src\ciCEFRenderHandler.h">
+      <Filter>Blocks\Cinder-CEF\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Cinder\blocks\Cinder-CEF\src\ciCEFV8ExtensionHandler.h">
+      <Filter>Blocks\Cinder-CEF\src</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Cinder\blocks\Cinder-CEF\src\ciCEF.cpp">
+      <Filter>Blocks\Cinder-CEF\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Cinder\blocks\Cinder-CEF\src\ciCEFBrowserClient.cpp">
+      <Filter>Blocks\Cinder-CEF\src</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Cinder\blocks\Cinder-CEF\src\cefListV8Converter.hpp">
+      <Filter>Blocks\Cinder-CEF\src</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Cinder\blocks\Cinder-CEF\src\cefListV8Converter.cpp">
+      <Filter>Blocks\Cinder-CEF\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Cinder\blocks\Cinder-CEF\src\ciCEFClientApp.cpp">
+      <Filter>Blocks\Cinder-CEF\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Cinder\blocks\Cinder-CEF\src\ciCEFV8ExtensionHandler.cpp">
+      <Filter>Blocks\Cinder-CEF\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\Resources.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Resources.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
