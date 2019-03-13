@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|x64">
@@ -13,13 +14,13 @@
     <ProjectGuid>{4856C422-F5E1-430C-AA5A-D4EA6F1E5FD0}</ProjectGuid>
     <RootNamespace>FabView</RootNamespace>
     <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
     <WholeProgramOptimization>false</WholeProgramOptimization>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
@@ -45,21 +46,21 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\include;"..\..\Cinder\include";..\..\Cinder\blocks\Cinder-CEF\libs\cef;..\..\Cinder\blocks\Cinder-CEF\libs\cef\include;..\..\Cinder\blocks\Cinder-CEF\libs\cef\include;..\..\Cinder\blocks\Cinder-CEF\libs\cef\include\base;..\..\Cinder\blocks\Cinder-CEF\src</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\include;..\..\Cinder\include;..\..\Cinder\blocks\Cinder-CEF\libs\cef;..\..\Cinder\blocks\Cinder-CEF\libs\cef\include;..\..\Cinder\blocks\Cinder-CEF\libs\cef\include\base;..\..\Cinder\blocks\Cinder-CEF\src</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_WIN32_WINNT=0x0601;_WINDOWS;NOMINMAX;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <PrecompiledHeader />
-      <WarningLevel>Level3</WarningLevel>
+      <WarningLevel>Level4</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>"..\..\Cinder\include";..\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\Cinder\include;..\include</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Link>
-      <AdditionalDependencies>cinder.lib;OpenGL32.lib;%(AdditionalDependencies);..\..\Cinder\blocks\Cinder-CEF\libs\cef\lib\vs\x64\Debug\libcef.lib;..\..\Cinder\blocks\Cinder-CEF\libs\cef\lib\vs\x64\Debug\libcef_dll_wrapper.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>"..\..\Cinder\lib\msw\$(PlatformTarget)";"..\..\Cinder\lib\msw\$(PlatformTarget)\$(Configuration)\$(PlatformToolset)"</AdditionalLibraryDirectories>
+      <AdditionalDependencies>cinder.lib;OpenGL32.lib;libcef.lib;libcef_dll_wrapper.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\Cinder\lib\msw\$(PlatformTarget);..\..\Cinder\lib\msw\$(PlatformTarget)\$(Configuration)\$(PlatformToolset);..\..\Cinder\blocks\Cinder-CEF\libs\cef\lib\vs\$(PlatformTarget)\$(Configuration)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
@@ -67,45 +68,30 @@
       <IgnoreSpecificDefaultLibraries>LIBCMT;LIBCPMT</IgnoreSpecificDefaultLibraries>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy /y "..\..\Cinder\blocks\Cinder-CEF\libs\cef\export\vs\x64" "$(OutDir)"
-xcopy /y "..\..\Cinder\blocks\Cinder-CEF\libs\cef\export\vs\x64\cef.pak" "$(OutDir)"
-xcopy /y "..\..\Cinder\blocks\Cinder-CEF\libs\cef\export\vs\x64\cef_100_percent.pak" "$(OutDir)"
-xcopy /y "..\..\Cinder\blocks\Cinder-CEF\libs\cef\export\vs\x64\cef_200_percent.pak" "$(OutDir)"
-xcopy /y "..\..\Cinder\blocks\Cinder-CEF\libs\cef\export\vs\x64\cef_extensions.pak" "$(OutDir)"
-xcopy /y "..\..\Cinder\blocks\Cinder-CEF\libs\cef\export\vs\x64\chrome_elf.dll" "$(OutDir)"
-xcopy /y "..\..\Cinder\blocks\Cinder-CEF\libs\cef\export\vs\x64\d3dcompiler_43.dll" "$(OutDir)"
-xcopy /y "..\..\Cinder\blocks\Cinder-CEF\libs\cef\export\vs\x64\d3dcompiler_47.dll" "$(OutDir)"
-xcopy /y "..\..\Cinder\blocks\Cinder-CEF\libs\cef\export\vs\x64\devtools_resources.pak" "$(OutDir)"
-xcopy /y "..\..\Cinder\blocks\Cinder-CEF\libs\cef\export\vs\x64\icudtl.dat" "$(OutDir)"
-xcopy /y "..\..\Cinder\blocks\Cinder-CEF\libs\cef\export\vs\x64\libcef.dll" "$(OutDir)"
-xcopy /y "..\..\Cinder\blocks\Cinder-CEF\libs\cef\export\vs\x64\libEGL.dll" "$(OutDir)"
-xcopy /y "..\..\Cinder\blocks\Cinder-CEF\libs\cef\export\vs\x64\libGLESv2.dll" "$(OutDir)"
-xcopy /y "..\..\Cinder\blocks\Cinder-CEF\libs\cef\export\vs\x64\natives_blob.bin" "$(OutDir)"
-xcopy /y "..\..\Cinder\blocks\Cinder-CEF\libs\cef\export\vs\x64\snapshot_blob.bin" "$(OutDir)"
-xcopy /y "..\..\Cinder\blocks\Cinder-CEF\libs\cef\export\vs\x64\v8_context_snapshot.bin" "$(OutDir)"
-xcopy /y "..\..\Cinder\blocks\Cinder-CEF\libs\cef\export\vs\x64\swiftshader" "$(OutDir)"
-xcopy /y "..\..\Cinder\blocks\Cinder-CEF\libs\cef\export\vs\x64\locales" "$(OutDir)"</Command>
+      <Command>
+      </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\include;"..\..\Cinder\include";..\..\Cinder\blocks\Cinder-CEF\libs\cef;..\..\Cinder\blocks\Cinder-CEF\libs\cef\include;..\..\Cinder\blocks\Cinder-CEF\libs\cef\include;..\..\Cinder\blocks\Cinder-CEF\libs\cef\include\base;..\..\Cinder\blocks\Cinder-CEF\src</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\include;..\..\Cinder\include;..\..\Cinder\blocks\Cinder-CEF\src;..\..\Cinder\blocks\Cinder-CEF\libs\cef;..\..\Cinder\blocks\Cinder-CEF\libs\cef\include;..\..\Cinder\blocks\Cinder-CEF\libs\cef\include\base</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_WIN32_WINNT=0x0601;_WINDOWS;NOMINMAX;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <PrecompiledHeader />
-      <WarningLevel>Level3</WarningLevel>
+      <WarningLevel>Level4</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>Disabled</Optimization>
     </ClCompile>
     <ProjectReference>
       <LinkLibraryDependencies>true</LinkLibraryDependencies>
     </ProjectReference>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>"..\..\Cinder\include";..\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\Cinder\include;..\include</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Link>
-      <AdditionalDependencies>cinder.lib;OpenGL32.lib;%(AdditionalDependencies);..\..\Cinder\blocks\Cinder-CEF\libs\cef\lib\vs\x64\Release\libcef.lib;..\..\Cinder\blocks\Cinder-CEF\libs\cef\lib\vs\x64\Release\libcef_dll_wrapper.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>"..\..\Cinder\lib\msw\$(PlatformTarget)";"..\..\Cinder\lib\msw\$(PlatformTarget)\$(Configuration)\$(PlatformToolset)"</AdditionalLibraryDirectories>
+      <AdditionalDependencies>cinder.lib;OpenGL32.lib;libcef.lib;libcef_dll_wrapper.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\Cinder\lib\msw\$(PlatformTarget);..\..\Cinder\lib\msw\$(PlatformTarget)\$(Configuration)\$(PlatformToolset);..\..\Cinder\blocks\Cinder-CEF\libs\cef\lib\vs\$(PlatformTarget)\$(Configuration)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <GenerateMapFile>true</GenerateMapFile>
       <SubSystem>Windows</SubSystem>
@@ -114,26 +100,6 @@
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
       <DataExecutionPrevention />
     </Link>
-    <PostBuildEvent>
-      <Command>xcopy /y "..\..\Cinder\blocks\Cinder-CEF\libs\cef\export\vs\x64" "$(OutDir)"
-xcopy /y "..\..\Cinder\blocks\Cinder-CEF\libs\cef\export\vs\x64\cef.pak" "$(OutDir)"
-xcopy /y "..\..\Cinder\blocks\Cinder-CEF\libs\cef\export\vs\x64\cef_100_percent.pak" "$(OutDir)"
-xcopy /y "..\..\Cinder\blocks\Cinder-CEF\libs\cef\export\vs\x64\cef_200_percent.pak" "$(OutDir)"
-xcopy /y "..\..\Cinder\blocks\Cinder-CEF\libs\cef\export\vs\x64\cef_extensions.pak" "$(OutDir)"
-xcopy /y "..\..\Cinder\blocks\Cinder-CEF\libs\cef\export\vs\x64\chrome_elf.dll" "$(OutDir)"
-xcopy /y "..\..\Cinder\blocks\Cinder-CEF\libs\cef\export\vs\x64\d3dcompiler_43.dll" "$(OutDir)"
-xcopy /y "..\..\Cinder\blocks\Cinder-CEF\libs\cef\export\vs\x64\d3dcompiler_47.dll" "$(OutDir)"
-xcopy /y "..\..\Cinder\blocks\Cinder-CEF\libs\cef\export\vs\x64\devtools_resources.pak" "$(OutDir)"
-xcopy /y "..\..\Cinder\blocks\Cinder-CEF\libs\cef\export\vs\x64\icudtl.dat" "$(OutDir)"
-xcopy /y "..\..\Cinder\blocks\Cinder-CEF\libs\cef\export\vs\x64\libcef.dll" "$(OutDir)"
-xcopy /y "..\..\Cinder\blocks\Cinder-CEF\libs\cef\export\vs\x64\libEGL.dll" "$(OutDir)"
-xcopy /y "..\..\Cinder\blocks\Cinder-CEF\libs\cef\export\vs\x64\libGLESv2.dll" "$(OutDir)"
-xcopy /y "..\..\Cinder\blocks\Cinder-CEF\libs\cef\export\vs\x64\natives_blob.bin" "$(OutDir)"
-xcopy /y "..\..\Cinder\blocks\Cinder-CEF\libs\cef\export\vs\x64\snapshot_blob.bin" "$(OutDir)"
-xcopy /y "..\..\Cinder\blocks\Cinder-CEF\libs\cef\export\vs\x64\v8_context_snapshot.bin" "$(OutDir)"
-xcopy /y "..\..\Cinder\blocks\Cinder-CEF\libs\cef\export\vs\x64\swiftshader" "$(OutDir)"
-xcopy /y "..\..\Cinder\blocks\Cinder-CEF\libs\cef\export\vs\x64\locales" "$(OutDir)"</Command>
-    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ResourceCompile Include="Resources.rc" />
@@ -150,12 +116,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\include\Resources.h" />
+    <ClInclude Include="..\..\Cinder\blocks\Cinder-CEF\src\browser_client.hpp" />
+    <ClInclude Include="..\..\Cinder\blocks\Cinder-CEF\src\cefListV8Converter.hpp" />
     <ClInclude Include="..\..\Cinder\blocks\Cinder-CEF\src\ciCEF.h" />
     <ClInclude Include="..\..\Cinder\blocks\Cinder-CEF\src\ciCEFBrowserClient.h" />
     <ClInclude Include="..\..\Cinder\blocks\Cinder-CEF\src\ciCEFClientApp.h" />
     <ClInclude Include="..\..\Cinder\blocks\Cinder-CEF\src\ciCEFRenderHandler.h" />
     <ClInclude Include="..\..\Cinder\blocks\Cinder-CEF\src\ciCEFV8ExtensionHandler.h" />
-    <ClInclude Include="..\..\Cinder\blocks\Cinder-CEF\src\cefListV8Converter.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />
