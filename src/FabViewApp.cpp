@@ -29,12 +29,13 @@ void FabViewApp::setup() {
     CI_LOG_I("Info log test");
 
     // Piggy bank (large model)
-    vanillaView.setup("https://skfb.ly/6HLrE", getWindowSize());
+    //vanillaView.setup("https://skfb.ly/6HLrE", getWindowSize());
 
     // Wade cup (reduced model)
     // vanillaView.setup("https://skfb.ly/6IvRF", getWindowSize());
-	
-	//vanillaView.setup("chrome://settings", getWindowSize());
+
+    // static page that starts Sketchfab Viewer API
+	vanillaView.setup("https://artlensdev.clevelandart.org/static/sketchfab.html", getWindowSize());
     vanillaView.registerEvents();
 
 }
